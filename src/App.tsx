@@ -74,7 +74,7 @@ const c = localStorage.getItem("AuthToken")
           </IonTabButton>
           <IonTabButton tab="Chat" href="/chat">
             <IonIcon aria-hidden="true" icon={chatboxEllipsesOutline} />
-            <IonLabel>Global Chat</IonLabel>
+            <IonLabel>My Notes</IonLabel>
           </IonTabButton>
       
         </IonTabBar>

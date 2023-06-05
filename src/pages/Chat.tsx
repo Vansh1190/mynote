@@ -150,7 +150,7 @@ const UserLogout = ()=>{
 
            <IonToolbar>
            <IonRow>
-        <IonTitle>Global Chat</IonTitle>
+        <IonTitle>My Notes</IonTitle>
         <IonButton  id='Logout' type='submit' onClick={UserLogout}> <IonIcon aria-hidden="true" icon={logOut} /> </IonButton>
         </IonRow>
         </IonToolbar>
