@@ -1,7 +1,4 @@
+
 {
-    "routes": [
-      { "src": "/", "dest": "/" },
-      { "src": "/chat", "dest": "/vansh" },
-      { "src": "/tos", "dest": "/" }
-    ]
-  }
+
+}
