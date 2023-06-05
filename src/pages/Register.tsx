@@ -102,7 +102,7 @@ const Register: React.FC = () => {
             label="Password"
             labelPlacement="floating"
             // helperText="Enter a valid email"
-            errorText="Invalid email"
+            
             style={{width:"80%"}}
             ></IonInput>
 
