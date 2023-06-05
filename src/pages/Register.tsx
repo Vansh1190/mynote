@@ -73,7 +73,7 @@ const Register: React.FC = () => {
 
         <form onSubmit={submitForm}>
         <IonList style={{display:"flex" , flexFlow:"column"}} className='ion-align-items-center'>
-
+        <IonTitle>Welcome to NotesVerse</IonTitle>
           <IonInput
            type="text"
            name="name"

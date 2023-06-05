@@ -1,4 +1,4 @@
-import { IonAlert, IonBreadcrumbs, IonButton, IonContent, IonHeader, IonInput, IonList, IonLoading, IonNote, IonPage, IonSpinner, IonSplitPane, IonTitle, IonToolbar, useIonRouter } from '@ionic/react';
+import { IonAlert, IonBreadcrumb, IonBreadcrumbs, IonButton, IonContent, IonHeader, IonInput, IonItem, IonList, IonLoading, IonNote, IonPage, IonSpinner, IonSplitPane, IonTitle, IonToolbar, useIonRouter } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab2.css';
 import { useEffect, useState } from 'react';
@@ -91,9 +91,12 @@ const Login: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
         <form onSubmit={UserLogin}>
+          
           <IonList style={{ display: "flex", flexFlow: "column" }} className='ion-align-items-center'>
-            <IonBreadcrumbs>{ "( Recomended New Register )"}</IonBreadcrumbs>
+           <IonTitle>Welcome to NotesVerse</IonTitle>
+           <br/>
             <IonNote>You may use, { "{ demo@mail.in : demo } if you dont have account !"}</IonNote>
+            <IonBreadcrumbs>{ "( Recomended New Re  gister )"}</IonBreadcrumbs>
             <br />
             <br />
             <IonInput
