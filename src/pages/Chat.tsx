@@ -13,18 +13,21 @@ export default function Chat(){
     const [LogedIn, setLogedIn] = useState("");
     const [UserData, setUserData] :any = useState();
     const [MSG,setMSG] = useState ("");
+    const [DISPLAYNONE, setDISPLAYNONE] = useState("");
  
 
 useEffect(()=>{
     
     if(localStorage.getItem("AuthToken")){
         setLogedIn("Logging in...");
+        setDISPLAYNONE("")
         setUserFound(true);
         axios.post("https://backnd-ge92.onrender.com/api/auth/getUser",null,{
             headers :{AuthToken :localStorage.getItem("AuthToken")}
         }).then((res)=>{
             setUserData(res)
             setLogedIn("");
+            setDISPLAYNONE("none")
             getMessages()
             document.getElementById("tab-button-Register")?.setAttribute("disabled" ,'')
             document.getElementById("tab-button-Login")?.setAttribute("disabled" ,'')
@@ -51,6 +54,7 @@ const handleChange :any = (e: ChangeEvent<HTMLInputElement>) => {
 
 const SendMessage = ()=>{
         UserData.data.message = ClearMSG
+        setDISPLAYNONE("")
         setLogedIn("Saving..")
         // console.log(UserData)
         const message = {
@@ -71,6 +75,7 @@ const SendMessage = ()=>{
             // setLoading(0)
             getMessages()
             setLogedIn("")
+            setDISPLAYNONE("none")
           
         }).catch((err)=>{
             console.log(err)
@@ -86,6 +91,7 @@ const getMessages = ()=>{
         }).then((res)=>{  
             setMessages(res.data.allNotes)
             setLogedIn("");
+            setDISPLAYNONE("none")
             // Messages.push(res)
           
         }).catch((err)=>{
@@ -145,7 +151,7 @@ const UserLogout = ()=>{
 
     return (
         <IonPage>
-        <IonLoading trigger="open-loading" message={LogedIn} duration={5000} />
+        <IonLoading  style={{display:DISPLAYNONE}} trigger="open-loading" id="loadings" message={LogedIn} duration={50000} />
         <IonButton style={{display:"none"}} id="open-loading">Show Loading</IonButton>
 
            <IonToolbar>
